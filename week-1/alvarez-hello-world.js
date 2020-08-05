@@ -1,3 +1,7 @@
+const header = require('./alvarez-header.js');
+
+console.log(header.display("Karina", "Alvarez", "Exercise 1.3 - Modules"));
+console.log ('\n');
 /*
 ============================================
 ; Title:  hello-world.js
@@ -12,7 +16,7 @@
 const http = require('http');
 
 function processRequest(req, res) {
-  const body = 'Hello World!';
+  const body = 'Recreating the Node.js Server Example';
 
   const contentLength = body.length;
 
