@@ -1,10 +1,10 @@
 const header = require('./alvarez-header.js');
 
-console.log(header.display("Karina", "Alvarez", "Exercise 1.3 - Modules"));
+console.log(header.display("Karina", "Alvarez", "Exercise 1.5 - Hello World"));
 console.log ('\n');
 /*
 ============================================
-; Title:  hello-world.js
+; Title:  alvarez-hello-world.js
 ; Author: Professor Krasso
 ; Date:   5 August 2020
 ; Modified by: Karina Alvarez
@@ -13,10 +13,11 @@ console.log ('\n');
 ;===========================================
 */
 
+// Recreatig the Node.js Server Example with my own body message
 const http = require('http');
 
 function processRequest(req, res) {
-  const body = 'Recreating the Node.js Server Example';
+  const body = 'Learning how to recreate the Node.js Server from example in exercise 1.5';
 
   const contentLength = body.length;
 
