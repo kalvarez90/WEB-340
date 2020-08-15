@@ -1,9 +1,9 @@
 {
-  "name": "routes",
+  "name": "ejs-views",
   "author": "Karina Alvarez",
   "private": true,
-  "version": "0.0.1",
   "dependencies": {
+    "ejs": "^3.1.3",
     "express": "^4.17.1"
   }
 }
