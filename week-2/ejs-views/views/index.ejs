@@ -45,11 +45,15 @@
     <h2>Assignment 2.4 - EJS Views</h2>
 
     <!--Assignment output-->
-    <ul class='h5 list-unstyled'>
-      <li>First Name: <%= firstName %></li>
-      <li>Last Name: <%= lastName %></li>
-      <li>Address: <%= address %></li>
-    </ul>
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="alert alert-success" role="alert">
+          <strong>Full Name: </strong> <span><%= firstName %> <%=lastName %></span>
+          <strong>Address: </strong> <span><%= address %></span>
+        </div>
+      </div>
+    </div>
+  </div>
     </div>
 
   </body>
