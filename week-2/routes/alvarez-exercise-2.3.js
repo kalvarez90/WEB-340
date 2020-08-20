@@ -1,3 +1,7 @@
+const header = require('./alvarez-header.js');
+
+console.log(header.display("Karina", "Alvarez", "Exercise 2.3 - Routes"));
+console.log ('\n');
 /*
 ============================================
 ; Title:  alvarez-exercise-2.3.js

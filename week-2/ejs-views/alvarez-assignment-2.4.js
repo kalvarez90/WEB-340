@@ -1,6 +1,10 @@
+const header = require('./alvarez-header.js');
+
+console.log(header.display("Karina", "Alvarez", "Assignment 2.4 - EJS Views"));
+console.log ('\n');
 /*
 ============================================
-; Title:  Alvarez-assignment-2.4.js
+; Title:  alvarez-assignment-2.4.js
 ; Author: Professor Krasso
 ; Modified by: Karina Alvarez
 ; Date:   13 August 2020
