@@ -13,13 +13,14 @@ console.log ('\n');
 ;===========================================
 */
 
+//start of program
 var express = require('express');
 var http = require('http');
 
 var app = express();
 
 
-
+// get request returning json object
 app.get('/customer/:id', function(req, res) {
   var id = parseInt(req.params.id, 10);
 
@@ -34,3 +35,4 @@ app.get('/customer/:id', function(req, res) {
 http.createServer(app).listen(8000, function() {
   console.log('Application started on port, ', 8000);
 });
+//end of program
