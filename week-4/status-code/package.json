@@ -1,0 +1,9 @@
+{
+  "name": "status-code",
+  "author": "Karina Alvarez",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
