@@ -1,0 +1,62 @@
+<!--
+============================================
+; Title:  index.ejs
+; Author: Professor Krasso
+; Date:   1 September 2020
+; Modified by: Karina Alvarez
+; Description: Assignment week 5
+;===========================================
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Exercise .2</title>
+
+    <!--Meta tags-->
+    <meta charset='UTF-8' />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+    crossorigin="anonymous">
+
+  </head>
+
+  <body>
+
+    <!-- Navbar using Bootstrap -->
+    <nav class='navbar navbar-expand-sm bg-dark navbar-dark'>
+      <ul class='navbar-nav'>
+        <li class='nav-item'>
+          <a class='nav-link active' href='#'>Home</a>
+        </li>
+        <li class='nav-item'>
+          <a class='nav-link' href='#'>About</a>
+        </li>
+        <li class='nav-item'>
+          <a class='nav-link' href='#'>Contact</a>
+        </li>
+      </ul>
+    </nav>
+    <br />
+
+    <div role="main" class="container">
+
+      <h2>Names</h2>
+
+      <!-- if -->
+      <% if(names.length > 0) { %>
+        <!--for loop-->
+        <% for( let x = 0; x < names.length; x++) { %>
+          <div class='alert alert-success'><strong><%= names[x] %></strong></div>
+          <% } %>
+          <!--end for loop -->
+
+          <% } %>
+          <!-- end if loop -->
+    </div>
+
+  </body>
+</html>
