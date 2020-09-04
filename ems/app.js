@@ -1,3 +1,8 @@
+const header = require('./alvarez-header.js');
+
+console.log(header.display("Karina", "Alvarez", "Assignment 5.4 - User Interface Development (EMS)"));
+console.log ('\n');
+
 /*
 ============================================
 ; Title:  app.js
@@ -18,13 +23,13 @@ var logger = require('morgan');
 // app
 var app = express();
 app.set('views', path.resolve(__dirname, 'views'));
-path.set('view engine', 'ejs');
+app.set('view engine', 'ejs');
 app.set(logger('short'));
 
 //
 app.get('/', function(req, res) {
   res.render('index', {
-    title: 'Home Page'
+    title: 'EMS'
   });
 });
 
