@@ -26,7 +26,7 @@ app.set('views', path.resolve(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.set(logger('short'));
 
-//
+//index or home page
 app.get('/', function(req, res) {
   res.render('index', {
     title: 'EMS'
