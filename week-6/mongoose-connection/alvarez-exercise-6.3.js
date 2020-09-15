@@ -1,3 +1,8 @@
+const header = require('./alvarez-header.js');
+
+console.log(header.display("Karina", "Alvarez", "Exercise 6.3 - Mongoose"));
+console.log ('\n');
+
 /*
 ============================================
 ; Title:  app.js
