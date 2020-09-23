@@ -3,7 +3,6 @@
   "author": "Karina Alvarez",
   "private": true,
   "dependencies": {
-    "body-parse": "^0.1.0",
     "body-parser": "^1.19.0",
     "cookie-parser": "^1.4.5",
     "csurf": "^1.11.0",
