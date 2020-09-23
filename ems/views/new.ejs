@@ -5,12 +5,46 @@
   <body>
     <%- include("navbar") %>
 
-    <div class="bg-light container-fluid" style="width: 100%;" id="main">
-
+    <div class=" text-center jumbotron" id="new">
+      <br />
+      <br/>
+      <h1 id="header">Employee Entry Page</h1>
+      <br />
+      <br />
     </div>
 
-    <%- include("footer") %>
+    <div class="container" style="width: 100%;">
+      <br>
+      <br>
 
+      <!--Entry form-->
+      <form method="post" action="/process">
+        <div class="form-group">
+          <label for="txtName">First Name:</label>
+          <input type="text" class="form-control" id="txtName" name="txtName" />
+        </div>
+
+        <div class="form-group">
+          <label for="txtLast">Last Name:</label>
+          <input type="text" class="form-control" id="txtLast" name="txtLast" />
+        </div>
+
+        <!--CSRF token-->
+        <div class="form-group">
+          <input name="_csrf" value="<%= csrfToken %>" type="hidden" />
+
+          <button type="submit" class="btn btn-secondary float-right">
+            Submit
+          </button>
+        </div>
+      </form>
+
+    </div>
+    <br>
+    <br>
+    <br>
+
+    <%- include("footer") %>
     <%- include("script") %>
   </body>
 </html>
