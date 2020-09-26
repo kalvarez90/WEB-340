@@ -24,6 +24,7 @@ var csrf = require('csurf');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var Employee = require('./models/employee');
+const { response } = require('express');
 
 
 //MongoDB Atlas
@@ -86,40 +87,49 @@ app.get('/new', function(req, res) {
   });
 });
 
+// redirection to list.ejs file
+app.get('/list', function(req, res) {
+  Employee.find({}, function(error, employees) {
+    if(error)
+      throw error;
+      res.render('list', {
+        title: 'EMS | List',
+        employees: employees
+    })
+//  }
+  });
+});
+
 // form submission
 app.post('/process', function(req, res) {
-  console.log(req.body.txtName);
-  /*if(!req.body.txtName) {
-    res.status(400).send('Entry must have a first name');
-    return;*/
-    res.redirect('/');
-  });
-
+  //console.log(req.body.txtName);
+  if(!req.body.txtName) {
+    res.status(400).send('Entry must have a name');
+    return;
+  //res.redirect('/');
+  }
 
 //get the request's form data
-//var employeeName = req.body.txtName;
-//console.log(employeeName);
+var employeeName = req.body.txtName;
+console.log(employeeName);
 
-//var employeeLast = req.body.txtLast;
-//console.log(employeeLast);
+var employeeLast = req.body.txtLast;
+console.log(employeeLast);
 
 //create an employee model
-var employee = new Employee({
-  firstName: 'Karina', //employeeName,
-  lastName: 'Alvarez' //employeeLast
+let employee = new Employee({
+  firstName: employeeName,
+  lastName: employeeLast
 });
 
 // save
-/*employee.save(function(err) {
-  if (err) {
-    console.log(err);
-    throw err;
-  } else {
+employee.save(function(error) {
+  if (error)
+    throw error;
     console.log(employeeName + ' ' + employeeLast + ' saved successfully!');
-    res.redirect('/');
-  }
+     });
+     res.redirect('/list');
 });
-*/
 
 http.createServer(app).listen(8000, function() {
   console.log('Application started on port 8000');
