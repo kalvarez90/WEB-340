@@ -24,7 +24,6 @@ var csrf = require('csurf');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var Employee = require('./models/employee');
-const { response } = require('express');
 
 
 //MongoDB Atlas
@@ -72,6 +71,7 @@ app.use(function(req, res, next) {
 // View engine and view's directory path
 app.set('views', path.resolve(__dirname, 'views'));
 app.set('view engine', 'ejs');
+app.set('port', process.env.PORT || 8000);
 
 //index or home page
 app.get('/', function(req, res) {
@@ -96,7 +96,6 @@ app.get('/list', function(req, res) {
         title: 'EMS | List',
         employees: employees
     })
-//  }
   });
 });
 
@@ -131,6 +130,25 @@ employee.save(function(error) {
      res.redirect('/list');
 });
 
-http.createServer(app).listen(8000, function() {
+//view page
+app.get('/view/:queryName', function(req, res) {
+  var queryName = req.params.queryName;
+
+  Employee.find({'firstName': queryName}, function(error, employees) {
+    if (error) throw error;
+      console.log(employees);
+
+      if (employees.length > 0) {
+        res.render('view', {
+          title: 'EMS | View',
+          employee: employees
+        })
+      } else {
+        res.redirect('/list');
+      }
+  });
+});
+
+http.createServer(app).listen(app.get('port'), function() {
   console.log('Application started on port 8000');
 })

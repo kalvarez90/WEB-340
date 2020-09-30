@@ -1,16 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include("header") %>
+  <%- include ("header") %>
 
   <body>
-    <%- include("navbar") %>
+    <%- include ("navbar") %>
 
-    <div class="bg-light container-fluid" style="width: 100%;" id="main">
+    <div class=" text-center jumbotron" id="list">
 
+      <br />
+      <br/>
+      <h1 id="header">Employee Management System</h1>
+      <p id="subheader">View Page</p>
+      <br />
+      <br />
     </div>
 
-    <<%- include ("footer") %>
+    <div class="container">
 
-    <%- include ("script") %>
+      <br>
+
+      <div>
+        <div class="form-group">
+          <label for="txtName">First Name:</label>
+          <input type="text" class="form-control" id="txtName" value="<%= employee[0].firstName %>"
+            name="txtName"/>
+        </div>
+
+        <div class="form-group">
+          <label for="txtLast">Last Name:</label>
+          <input type="text" class="form-control" id="txtLast" value="<%= employee[0].lastName %>"
+            name="txtLast"/>
+        </div>
+      </div>
+
+      <br>
+      <br>
+
+      <a href="/list">Return to Employee List</a>
+    </div>
+
+    <%- include("footer") %>
+    <%- include("script") %>
   </body>
-</html
+</html>
