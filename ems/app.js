@@ -27,7 +27,7 @@ var Employee = require('./models/employee');
 
 
 //MongoDB Atlas
-var mongoDB = 'mongodb+srv://userName:user123@buwebdev-cluster-1.z53kv.mongodb.net/test';
+var mongoDB = 'mongodb+srv://userName:user123@buwebdev-cluster-1.z53kv.mongodb.net/ems';
 
 //Connection
 mongoose.connect(mongoDB, {
